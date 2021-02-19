@@ -17,10 +17,10 @@ pokename_containers = soup.find_all('a', class_ = 'ent-name' )
 for each in pokename_containers:
     name = each.string.lower()
     names.append(name)
-for i in range(0,151): #change the number to required pokedex entry
+for i in range(0,151): #modify to required pokedex entry
     url = img_srcs[i]
     r = rq.get(url)
-    with open('C://Users/lenovo/Desktop/pokemon images/images/{}.png'.format(names[i]) , 'wb') as f: #replace with your loaction
+    with open('C://Users/lenovo/Desktop/pokemon images/images/{}.png'.format(names[i]) , 'wb') as f: #replace with your location
         f.write(r.content)
     print(r.status_code)
     print(r.headers['content-type'])
